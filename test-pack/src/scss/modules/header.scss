@@ -1,0 +1,24 @@
+:root {
+  --bg: #1C1C1C;
+  --bgcircle: #fff;
+  --text: #fff;
+  --light: #cc9dff;
+  --filter: none;
+  --filterbg: none;
+}
+
+@mixin button($bcolor,
+  $url,
+  $x1,
+  $y1,
+  $bor,
+  $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+

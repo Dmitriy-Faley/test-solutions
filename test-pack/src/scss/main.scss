@@ -1,0 +1,274 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/wraper";
+@import "modules/template.scss";
+
+
+html {
+    line-height: $mainLineHeight;
+    font-size: $mainFontSize;
+    color: $mainFontColor;
+    height: 100%;
+    background: initial !important;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 14px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: $mainFontSize;
+    font-weight: 400;
+    color: $dark-color;
+    background-color: $default-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 31.45px;
+    position: relative;
+    height: 100%;
+}
+
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $blue-color #fff;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $blue-color;
+    border-radius: 20px;
+    border: 3px solid #fff;
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: $default-color;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button,
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border-bottom: 1px solid $blue-color;
+    -webkit-text-fill-color: $dark-color;
+    -webkit-box-shadow: 0 0 0px 0px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+section,
+.section {
+    position: relative;
+}
+
+
+.container {
+    width: 83%;
+    max-width: 1206px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $smDesktopWidth) {
+        max-width: tableWidth;
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        max-width: phoneWidth;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        width: 93%;
+    }
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20px;
+    background: $blue-color;
+    border-radius: 30px;
+    color: $default-color;
+    cursor: pointer;
+    padding: 15px 40px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    width: max-content;
+
+    &::before {
+        content: "";
+        background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.5));
+        height: 85px;
+        width: 50px;
+        position: absolute;
+        top: -8px;
+        left: -82px;
+        transform: skewX(-45deg);
+    }
+
+    &:hover::before {
+        left: 385px;
+        transition: 1.2s ease;
+    }
+
+    &:active {
+        box-shadow: none;
+        background: #E6E6ED;
+        color: #9A9AA7;
+    }
+
+    :focus {
+        box-shadow: none;
+        background: #E6E6ED;
+        color: #9A9AA7;
+    }
+
+}
+
+.button-more {
+    display: inline-block;
+    border-radius: 4px;
+    background: $orange-color;
+    padding: 12px 32px;
+    color: $default-color;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $blue-color;
+    }
+}
+
+
+.title {
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 56px;
+    color: $dark-color;
+    text-align: center;
+    padding-bottom: 26px;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100px;
+        height: 4px;
+        background: $blue-color;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+/*Будет верно для маниторов у которых ширина 0-1920*/
+@media screen and (max-width: 1920px) {}
+
+/* 1369 - 1600 px */
+@media screen and (max-width: 1600px) {}
+
+/* 961 - 1368 px */
+@media screen and (max-width: 1368px) {}
+
+/* 769 - 960 px */
+@media screen and (max-width: 960px) {}
+
+/* 481 - 768 px */
+@media screen and (max-width: 768px) {}
+
+/* 320 - 480 px */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 22px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 330px) {}
