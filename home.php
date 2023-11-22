@@ -17,7 +17,7 @@ get_header();
                 <?php 
                 $image = get_field('izobrazhenie');
                 if( !empty( $image ) ): ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <img class="lozad" data-src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php endif; ?>
             </div>
         </div>
@@ -36,7 +36,7 @@ get_header();
         </div>
         <div class="serve__map">
             <div class="map">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/World_Map_2-blue.png" alt="map">
+                <img class="lozad" data-src="<?php echo get_template_directory_uri() ?>/assets/img/World_Map_2-blue.png" alt="map">
             </div>
             <div class="partners">
                 <?php while (have_rows('partnery')): the_row();  
@@ -44,7 +44,7 @@ get_header();
                 ?>
 
                 <div class="item">
-                    <img src="<?php echo $logoPartnera['url']; ?>" alt="<?php echo $logoPartnera['alt']; ?>">
+                    <img class="lozad" data-src="<?php echo $logoPartnera['url']; ?>" alt="<?php echo $logoPartnera['alt']; ?>">
                 </div>
 
                 <?php endwhile; ?>
@@ -69,7 +69,7 @@ get_header();
                 ?>
             <div class="list__item">
                 <div class="list__item--logo">
-                    <img src="<?php echo $logoCust['url']; ?>" alt="<?php echo $logoCust['alt']; ?>">
+                    <img class="lozad" data-src="<?php echo $logoCust['url']; ?>" alt="<?php echo $logoCust['alt']; ?>">
                 </div>
                 <p class="list__item--name"><?php echo $nameCust; ?></p>
             </div>
@@ -97,9 +97,9 @@ get_header();
         ?>
 
             <div class="leadership__list--item">
-                <img class="full-ava" src="<?php echo $avaBAckg['url']; ?>" alt="full-ava">
+                <img class="full-ava lozad" data-src="<?php echo $avaBAckg['url']; ?>" alt="full-ava">
                 <div class="ava">
-                    <img src="<?php echo $ava['url']; ?>" alt="ava">
+                    <img class="lozad" data-src="<?php echo $ava['url']; ?>" alt="ava">
                 </div>
                 <div class="info">
                     <p class="name"><?php echo $name; ?></p>
@@ -139,7 +139,7 @@ get_header();
 
                 <div class="list__item">
                     <div class="image">
-                        <img src="<?php echo $imageTravel['url']; ?>" alt="<?php echo $imageTravel['alt']; ?>">
+                        <img class="lozad" data-src="<?php echo $imageTravel['url']; ?>" alt="<?php echo $imageTravel['alt']; ?>">
                     </div>
                     <div class="info">
                         <p class="info__title"><?php echo $nameTravel; ?></p>
@@ -172,12 +172,12 @@ get_header();
 
                 <div class="swiper-slide">
                     <div class="review__info">
-                        <img src="<?php echo $imageRev['url']; ?>" class="photo" alt="<?php echo $imageRev['alt']; ?>">
+                        <img class="lozad photo" data-src="<?php echo $imageRev['url']; ?>" alt="<?php echo $imageRev['alt']; ?>">
                         <div class="review__info--desk">
                             <p class="name"><?php echo $nameRev; ?></p>
                             <p class="job"><?php echo $jobRev; ?></p>
                         </div>
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/tours.svg" class="tour-logo" alt="tours">
+                        <img data-src="<?php echo get_template_directory_uri() ?>/assets/img/tours.svg" class="tour-logo lozad" alt="tours">
                     </div>
                     <div class="review__text">
                         <?php echo $textRev; ?>
